@@ -1,0 +1,11 @@
+1. Line 9 prints out `values added: 20`. `result` is declared as a `var` variable so its scope is the entire function, so it can be reassigned and then printed out by `console.log()` in the `if statement` block. `result == 20` because `10` is passed in for the parameters `num1` and `num2` and `true` for `add`, so the `if (add)` condition is true, then `result = 10 + 10` is executed on Line 7 so the value of `result` when Line 9 executes is `result == 20`.
+
+2. Line 13 prints out `final result: 20`. Since `result` is a `var` variable, its scope is the entire function, meaning despite being declared in the `if statement` body, since the `if statement` is inside the function body, `result` can be accessed on Line 13 and printed out.
+
+3. Line 9 prints out `values added: 20`. `result` is declared as a `let` variable so it has block scope, meaning it can only be accessed in the block it is defined in. In this case, `result` was declared and initialized in the `if statement`, so its scope is the `if statement` block. Therefore, it can be accessed and printed out by Line 9 since Line 9 is inside the same block.
+
+4. Line 13 returns an error. The reason is because `result` has block scope because it's declared as a `let` variable, meaning it's only accessible within its block, which is the `if statement`. Since Line 13 is outside of the `if statement's` block, it's unable to access the `result` variable.
+
+5. Line 9 returns an error due to Line 7's reassignment. The reason is because `result` is declared as a `const` variable, meaning it can't be reassigned, causing an error when attempting to assign `num1 + num2` to `result` on Line 7.
+
+6. Line 13 returns an error. Since `result` is a `const` variable, the reassignment on Line 7 causes a runtime error. In JavaScript, when a runtime error occurs, the program terminates and doesn't run the rest of the code. This means that Line 13 technically is never run due to the error caused by Line 7's reassignment of a `const` variable. If Line 7 was commented out, then Line 13 would return an error due to `result` having block scope due to it being a `const` variable. Since `result` has block scope, Line 13 is unable to access `result` since it's not within the `if statement's` block causing an error.
