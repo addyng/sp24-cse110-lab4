@@ -58,4 +58,5 @@
     - `4`
     - `3`
     - `2`
+
 The reason for this ordering is because `setTimeout()` is an asynchronous function and asynchronous functions don't prevent other functions from executing on the function stack. In this case, Line 2 is executed, printing out `1`. Then Lines 3 and 4 are ran, but nothing is printed yet until Line 5 is finished executing and `4` is printed out. Then, Line 3 has a delay of 1 second so Line 4 will be the first to print out `3` since it has a delay of 0, then Line 3 will print out `2` after its delay is over. Essentially, non-asynchronous functions take priority before asynchronous functions.
